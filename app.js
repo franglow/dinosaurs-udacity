@@ -1,6 +1,8 @@
 
-    // Create Dino Constructor
 
+    // Create Dino Constructor
+// How to export and import variables to get that json file.
+// https://stackoverflow.com/questions/34645731/export-more-than-one-variable-in-es6
 
     // Create Dino Objects
 
