@@ -1,13 +1,34 @@
-
+FIXME
+// https://knowledge.udacity.com/questions/415792
+import dinosjson from './dino.js'
+// dinos es un objeto que contine el array Dinos 
 
     // Create Dino Constructor
-// How to export and import variables to get that json file.
-// https://stackoverflow.com/questions/34645731/export-more-than-one-variable-in-es6
+
+function Dino(species, weight, height, diet, where, when, fact) {
+    this.species = species;
+    this.weight = weight;
+    this.height = height;
+    this.diet = diet;
+    this.where = where;
+    this.when = when;
+    this.fact = fact;
+}
 
     // Create Dino Objects
 
+const dinos = dinosjson.Dinos.map((dino) => {
+    let {species, weight, height, diet, where, when, fact } = dino
+    return new Dino(species, weight, height, diet, where, when, fact )
+    
+})
 
+FIXME
+console.log(dinos);
+
+    
     // Create Human Object
+
 
     // Use IIFE to get human data from form
 
