@@ -1,4 +1,4 @@
-FIXME
+// FIXME
 // https://knowledge.udacity.com/questions/415792
 import dinosjson from './dino.js'
 // dinos es un objeto que contine el array Dinos 
@@ -23,7 +23,7 @@ const dinos = dinosjson.Dinos.map((dino) => {
     
 })
 
-FIXME
+// FIXME
 console.log(dinos);
 
     
