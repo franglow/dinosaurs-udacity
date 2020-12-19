@@ -1,0 +1,26 @@
+{
+  "name": "dinosaurs-udacity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "start": "http-server -c-1 -p 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franglow/dinosaurs-udacity.git"
+  },
+  "author": "fran cortez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franglow/dinosaurs-udacity/issues"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "homepage": "https://github.com/franglow/dinosaurs-udacity#readme"
+}

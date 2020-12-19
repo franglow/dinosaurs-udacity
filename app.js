@@ -1,8 +1,3 @@
-// FIXME
-// https://knowledge.udacity.com/questions/415792
-import dinosjson from './dino.js'
-// dinos es un objeto que contine el array Dinos 
-
     // Create Dino Constructor
 
 function Dino(species, weight, height, diet, where, when, fact) {
@@ -16,21 +11,54 @@ function Dino(species, weight, height, diet, where, when, fact) {
 }
 
     // Create Dino Objects
+    const createDinos = (function () {
+        let dinos = [];
+        let dinosObj = {};
 
-const dinos = dinosjson.Dinos.map((dino) => {
-    let {species, weight, height, diet, where, when, fact } = dino
-    return new Dino(species, weight, height, diet, where, when, fact )
-    
-})
+        function getDinos() {
+        
+            fetch('./dino.json')
+                .then(res => res.json())
+                .then((data) => {
+                    dinosObj.dinos = data.Dinos.map((dino) => {
+                        let {species, weight, height, diet, where, when, fact } = dino
+                        return new Dino(species, weight, height, diet, where, when, fact )
+                    })
+                    return dinosObj;
+                })        
+                return dinosObj;
+        }
+        
+        return {
+            dinos: getDinos,
+        }
+    }
+    )();
 
-// FIXME
-console.log(dinos);
+    const dinosObject = createDinos.dinos()
 
-    
-    // Create Human Object
+    // misDinos.dinos.map(dato => console.log(dato))
+    console.log(dinosObject);
+    console.log(dinosObject.dinos);
+    const { dinos } = dinosObject;
+    console.log(dinos);
+
+
+// // Create Human Object
+// function Human(name, heightFeet, heightInches, weight, diet = {}) {
+//     this.name = name;
+//     this.heightFeet = heightFeet;
+//     this.heightInches = heightInches;
+//     this.weight = weight;
+//     this.diet = diet;
+// }
+
+// // Appending Empty Human Object to dinos Array
+// dinos.push(new Human({}))
 
 
     // Use IIFE to get human data from form
+
 
 
     // Create Dino Compare Method 1
