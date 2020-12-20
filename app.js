@@ -12,7 +12,6 @@ function Dino(species, weight, height, diet, where, when, fact) {
 
     // Create Dino Objects
     const createDinos = (function () {
-        let dinos = [];
         let dinosObj = {};
 
         function getDinos() {
@@ -20,41 +19,33 @@ function Dino(species, weight, height, diet, where, when, fact) {
             fetch('./dino.json')
                 .then(res => res.json())
                 .then((data) => {
+                    console.log('finished fetch');
                     dinosObj.dinos = data.Dinos.map((dino) => {
                         let {species, weight, height, diet, where, when, fact } = dino
                         return new Dino(species, weight, height, diet, where, when, fact )
-                    })
+                    });
                     return dinosObj;
-                })        
+                });   
                 return dinosObj;
         }
         
         return {
-            dinos: getDinos,
-        }
+            dinos: getDinos
+            }
     }
-    )();
+    );
 
-    const dinosObject = createDinos.dinos()
-
-    // misDinos.dinos.map(dato => console.log(dato))
-    console.log(dinosObject);
-    console.log(dinosObject.dinos);
-    const { dinos } = dinosObject;
-    console.log(dinos);
-
-
-// // Create Human Object
-// function Human(name, heightFeet, heightInches, weight, diet = {}) {
-//     this.name = name;
-//     this.heightFeet = heightFeet;
-//     this.heightInches = heightInches;
-//     this.weight = weight;
-//     this.diet = diet;
-// }
-
-// // Appending Empty Human Object to dinos Array
-// dinos.push(new Human({}))
+    
+    // Create Human Object
+    function Human(name, heightFeet, heightInches, weight, diet = {}) {
+        this.name = name;
+        this.heightFeet = heightFeet;
+        this.heightInches = heightInches;
+        this.weight = weight;
+        this.diet = diet;
+    }
+    // Appending Empty Human Object to dinos Array
+    const humans = new Human({});
 
 
     // Use IIFE to get human data from form
