@@ -196,7 +196,9 @@
  
  // On button click, prepare and display infographic
  function compare() {
+    // Async call
     getDinoJson();
+    // Sync call
     getHumanData.human();
     removeForm();
 }
